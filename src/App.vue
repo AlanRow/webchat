@@ -1,11 +1,24 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <message-form @send="sendMessage"></message-form>
+  </div>
 </template>
 
 <script>
+import MessageForm from "@/components/MessageForm.vue";
+import Chat from "@/api/chat";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    MessageForm,
+  },
+  methods: {
+    sendMessage({ from, to, message }) {
+      const chat = new Chat(from, to);
+      chat.sendMessage(message);
+    },
+  },
 };
 </script>
 
