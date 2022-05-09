@@ -1,60 +1,44 @@
 <template>
-  <form action="#">
-    <!-- From name -->
-    <div class="field">
-      <label for="message_from">From:</label>
-      <input id="message_from" v-model="from" type="text" />
-    </div>
-
-    <!-- To name -->
-    <div class="field">
-      <label for="message_to">To:</label>
-      <input id="message_to" v-model="to" type="text" />
-    </div>
-
-    <!-- Message text -->
-    <div class="field">
-      <label for="message_text">Message:</label>
-      <input id="message_text" v-model="message" type="textarea" />
-    </div>
-
-    <button type="submit" @click="sendMessage">Send</button>
-  </form>
+  <BaseSubmitInput
+    v-model="message"
+    class="message-input"
+    size="large"
+    btn-type="primary"
+    :input-props="{
+      type: 'text',
+      placeholder: 'Enter a message...',
+    }"
+    @submit="send"
+  >
+    Send
+  </BaseSubmitInput>
 </template>
 
 <script>
+import { BaseSubmitInput } from "@/components/base";
+
 export default {
   name: "MessageForm",
+  components: {
+    BaseSubmitInput,
+  },
   data() {
     return {
-      from: "",
-      to: "",
       message: "",
     };
   },
-  computed: {
-    messageData() {
-      return {
-        from: this.from,
-        to: this.to,
-        message: this.message,
-      };
-    },
-  },
   methods: {
-    sendMessage() {
-      if (!this.from || !this.to) {
-        alert("You haven't filled credentials");
+    send() {
+      if (this.message.length > 0) {
+        this.$emit("send", this.message);
       }
-      this.$emit("send", this.messageData);
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-.field {
-  display: flex;
-  flex-direction: column;
+.message-input {
+  padding: 15px 10px;
 }
 </style>
