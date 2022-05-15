@@ -50,6 +50,8 @@ export default {
   padding: 0.5em;
   border-radius: 0.5rem;
 
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
   color: white;
 
   &_theme {

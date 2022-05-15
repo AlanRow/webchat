@@ -37,7 +37,18 @@ export default {
 
 <style scoped lang="scss">
 .button {
+  --shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  --shadow-light: -1px -1px 1px rgba(255, 255, 255, 0.7);
+
   font-family: Verdana, sans-serif;
+  border: none;
+
+  /** shadows **/
+  box-shadow: var(--shadow), var(--shadow-light);
+
+  &:active {
+    box-shadow: inset var(--shadow), inset var(--shadow-light);
+  }
 
   &_type {
     &_primary {
