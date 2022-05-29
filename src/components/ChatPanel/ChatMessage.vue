@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="message"
     class="message"
     :class="{
       message_theme_own: theme === 'own',
@@ -8,14 +9,21 @@
   >
     <p class="message__text">{{ text }}</p>
     <span class="message__time">{{ messageTimeLine }}</span>
+
+    <!-- контекстное меню -->
+    <ContextMenu ref="menu" :options="$options.messageMenuOptions" />
   </div>
 </template>
 
 <script>
 import dayjs from "dayjs";
+import ContextMenu from "@/components/dialog/ContextMenu.vue";
 
 export default {
   name: "ChatMessage",
+  components: {
+    ContextMenu,
+  },
   props: {
     text: {
       type: String,
@@ -33,10 +41,34 @@ export default {
       },
     },
   },
+  messageMenuOptions: [
+    {
+      id: "reply",
+      label: "Reply",
+    },
+    {
+      id: "forward",
+      label: "Forward",
+    },
+    {
+      id: "copy",
+      label: "Copy",
+    },
+    {
+      id: "delete",
+      label: "Delete",
+    },
+  ],
   computed: {
     messageTimeLine() {
       return dayjs(this.time).format("HH:mm");
     },
+  },
+  mounted() {
+    const message = this.$refs.message;
+    if (message) {
+      this.$refs.menu.bindMenu(message);
+    }
   },
 };
 </script>
