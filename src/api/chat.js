@@ -1,39 +1,17 @@
-const WS_URL = process.env.VUE_APP_WEBSOCKET_URL;
+import { USER_INFO, CHATS, USERS, MESSAGES } from "@/mock";
 
-export default class ChatInstance {
-  #user = null;
-  #receiver = null;
-  #ws = null;
+export async function fetchUserInfo() {
+  return USER_INFO;
+}
 
-  constructor(user, receiver) {
-    this.#user = user;
-    this.#receiver = receiver;
-    this.#ws = new WebSocket(WS_URL);
-  }
+export async function fetchChats() {
+  return CHATS;
+}
 
-  get messageMeta() {
-    return {
-      from: this.#user,
-      to: this.#receiver,
-    };
-  }
+export async function fetchUsers() {
+  return USERS;
+}
 
-  sendMessage(message) {
-    if (this.#ws.readyState === 0) {
-      this.#ws.addEventListener("open", this.sendMessage.bind(this, message));
-      return;
-    }
-
-    const data = {
-      ...this.messageMeta,
-      text: message,
-    };
-    this.#ws.send(JSON.stringify(data));
-  }
-
-  async subscribeOnMessageReceived(handler) {
-    this.#ws.addEventListener("message", (event) => {
-      handler(event.data.message);
-    });
-  }
+export async function fetchMessages(chatId) {
+  return MESSAGES.filter(({ chat }) => chat === chatId);
 }

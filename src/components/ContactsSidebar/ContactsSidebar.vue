@@ -25,6 +25,7 @@
           :key="user.id"
           class="contacts-list__item"
           :username="user.name"
+          :is-selected="user.id === selectedId"
           @click="selectUser(user)"
         />
       </ul>
@@ -51,7 +52,14 @@ export default {
   data() {
     return {
       newUser: "",
+      selectedId: null,
     };
+  },
+  methods: {
+    selectUser(user) {
+      this.selectedId = user.id;
+      this.$emit("select", user);
+    },
   },
 };
 </script>
@@ -83,7 +91,7 @@ export default {
 }
 
 .scrollable {
-  direction: rtl;
+  // direction: rtl;
 
   &::-webkit-scrollbar {
     width: 10px;

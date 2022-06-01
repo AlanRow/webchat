@@ -1,5 +1,9 @@
 <template>
-  <li class="contact-container">
+  <li
+    class="contact-container"
+    :class="{ selected: isSelected }"
+    @click="$emit('click')"
+  >
     <span class="name">{{ username }}</span>
   </li>
 </template>
@@ -11,6 +15,10 @@ export default {
     username: {
       type: String,
       default: "",
+    },
+    isSelected: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -30,7 +38,7 @@ export default {
 
   cursor: pointer;
 
-  &:hover {
+  &:where(:hover, .selected) {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
