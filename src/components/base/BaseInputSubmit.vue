@@ -21,7 +21,7 @@
 import { BaseInput, BaseButton } from "@/components/base";
 
 export default {
-  name: "BaseSubmitInput",
+  name: "BaseInputSubmit",
   components: {
     BaseInput,
     BaseButton,

@@ -3,6 +3,7 @@
     <div class="main-grid">
       <ContactsSidebar
         :contacts="contacts"
+        :is-loading="areChatsLoading"
         class="main-grid__contacts"
         @select="selectChat"
       />

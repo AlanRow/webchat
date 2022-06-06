@@ -1,6 +1,6 @@
 <template>
   <section class="contacts-container">
-    <BaseSubmitInput
+    <BaseInputSubmit
       v-model="newUser"
       class="contacts-container__add-user"
       size="medium"
@@ -15,11 +15,12 @@
       @submit="$emit('addUser', newUser)"
     >
       Add User
-    </BaseSubmitInput>
+    </BaseInputSubmit>
 
-    <div class="contacts-container__contacts scrollable">
-      <span v-if="contacts.length === 0">No contacts available...</span>
-      <ul v-else class="contacts-list">
+    <div class="contacts-container__contacts scrollable contacts-panel">
+      <BaseLoaderDotted v-if="isLoading" label="Loading" />
+      <span v-else-if="contacts.length === 0">No contacts available</span>
+      <ul v-else class="contacts-panel__list contacts-list">
         <ContactsItem
           v-for="user in contacts"
           :key="user.id"
@@ -34,19 +35,24 @@
 </template>
 
 <script>
-import { BaseSubmitInput } from "@/components/base";
+import { BaseInputSubmit, BaseLoaderDotted } from "@/components/base";
 import ContactsItem from "./ContactsItem.vue";
 
 export default {
   name: "ContactsSidebar",
   components: {
-    BaseSubmitInput,
+    BaseInputSubmit,
+    BaseLoaderDotted,
     ContactsItem,
   },
   props: {
     contacts: {
       type: Array,
       default: () => [],
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -77,7 +83,18 @@ export default {
 
   &__contacts {
     max-height: 100%;
+    width: 100%;
     overflow-y: scroll;
+  }
+}
+
+.contacts-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__list {
+    width: 100%;
   }
 }
 
@@ -92,7 +109,6 @@ export default {
 
 .scrollable {
   // direction: rtl;
-
   &::-webkit-scrollbar {
     width: 10px;
 

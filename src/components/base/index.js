@@ -1,5 +1,8 @@
 import BaseButton from "./BaseButton.vue";
 import BaseInput from "./BaseInput.vue";
-import BaseSubmitInput from "./BaseSubmitInput.vue";
+import BaseInputSubmit from "./BaseInputSubmit.vue";
 
-export { BaseInput, BaseButton, BaseSubmitInput };
+/** Loaders */
+import BaseLoaderDotted from "./BaseLoaderDotted.vue";
+
+export { BaseInput, BaseButton, BaseInputSubmit, BaseLoaderDotted };

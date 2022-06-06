@@ -1,5 +1,5 @@
 <template>
-  <BaseSubmitInput
+  <BaseInputSubmit
     v-model="message"
     class="message-input"
     size="large"
@@ -11,16 +11,16 @@
     @submit="send"
   >
     Send
-  </BaseSubmitInput>
+  </BaseInputSubmit>
 </template>
 
 <script>
-import { BaseSubmitInput } from "@/components/base";
+import { BaseInputSubmit } from "@/components/base";
 
 export default {
   name: "MessageForm",
   components: {
-    BaseSubmitInput,
+    BaseInputSubmit,
   },
   data() {
     return {
