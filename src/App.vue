@@ -7,7 +7,11 @@
         class="main-grid__contacts"
         @select="selectChat"
       />
-      <ChatPanel :messages="messages" class="main-grid__chat" />
+      <ChatPanel
+        :messages="messages"
+        :is-loading="areMessagesLoading"
+        class="main-grid__chat"
+      />
       <MessageForm class="main-grid__message" />
     </div>
   </div>
@@ -104,6 +108,7 @@ export default {
     async selectChat(chat) {
       if (chat.id !== this.currentChat?.id) {
         this.currentChat = chat;
+        this.areMessagesLoading = true;
         try {
           const messages = await fetchMessages(chat.id);
           this.messagesList = messages;
@@ -111,7 +116,7 @@ export default {
           console.error(error);
           alert("Error!");
         } finally {
-          this.areChatsLoading = false;
+          this.areMessagesLoading = false;
         }
       }
     },

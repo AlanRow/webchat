@@ -4,5 +4,12 @@ import BaseInputSubmit from "./BaseInputSubmit.vue";
 
 /** Loaders */
 import BaseLoaderDotted from "./BaseLoaderDotted.vue";
+import BaseLoaderSpinner from "./BaseLoaderSpinner.vue";
 
-export { BaseInput, BaseButton, BaseInputSubmit, BaseLoaderDotted };
+export {
+  BaseInput,
+  BaseButton,
+  BaseInputSubmit,
+  BaseLoaderDotted,
+  BaseLoaderSpinner,
+};

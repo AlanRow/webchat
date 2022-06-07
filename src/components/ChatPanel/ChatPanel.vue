@@ -1,44 +1,81 @@
 <template>
-  <div class="chat-panel">
-    <ChatMessage
-      v-for="mes in messages"
-      :key="mes.id"
-      v-bind="mes"
-      :theme="mes.isOwn ? 'own' : 'alter'"
-      class="chat-panel__message"
-      :class="{
-        'chat-panel__message_own': mes.isOwn,
-      }"
-    />
+  <div class="chat-wrapper">
+    <div v-if="isLoading" class="chat-wrapper__loader loader-wrapper">
+      <BaseLoaderSpinner
+        background-color="#dadaff"
+        fill-color="blue"
+        unfill-color="grey"
+        class="loader-wrapper__loader"
+      />
+    </div>
+    <div v-else class="chat-wrapper__messages chat-messages">
+      <ChatMessage
+        v-for="mes in messages"
+        :key="mes.id"
+        v-bind="mes"
+        :theme="mes.isOwn ? 'own' : 'alter'"
+        class="chat-messages__message"
+        :class="{
+          'chat-messages__message_own': mes.isOwn,
+        }"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { BaseLoaderSpinner } from "@/components/base";
 import ChatMessage from "./ChatMessage.vue";
 
 export default {
   name: "ChatPanel",
   components: {
     ChatMessage,
+    BaseLoaderSpinner,
   },
   props: {
     messages: {
       type: Array,
       default: () => [],
     },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-.chat-panel {
+.chat-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1em 2em;
+  background-color: #dadaff;
+
+  &__loader {
+    justify-self: center;
+    align-self: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  &__messages {
+    width: 100%;
+  }
+}
+
+.loader-wrapper {
+  &__loader {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chat-messages {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
-
-  padding: 1em 2em;
-
-  background-color: #dadaff;
 
   &__message {
     margin: 0.5em 1em;

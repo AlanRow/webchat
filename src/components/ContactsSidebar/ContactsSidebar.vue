@@ -10,7 +10,7 @@
         placeholder: 'Search user...',
       }"
       :button-props="{
-        type: submit,
+        type: 'submit',
       }"
       @submit="$emit('addUser', newUser)"
     >
