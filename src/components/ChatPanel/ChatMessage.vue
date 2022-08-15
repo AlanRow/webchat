@@ -84,14 +84,16 @@ export default {
 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
-  color: white;
+  color: var(--primary-text-color);
 
   &_theme {
     &_own {
-      background-color: green;
+      background-color: var(--primary-color);
+      color: var(--primary-text-color);
     }
     &_alter {
-      background-color: blue;
+      background-color: var(--secondary-color);
+      color: var(--secondary-text-color);
     }
   }
 

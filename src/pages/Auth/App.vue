@@ -40,7 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  background-color: green;
+  background-color: var(--primary-color);
 }
 .auth-form {
   display: flex;
@@ -48,6 +48,6 @@ export default {
   align-items: center;
 
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--secondary-color);
 }
 </style>

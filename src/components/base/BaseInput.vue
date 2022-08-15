@@ -63,7 +63,7 @@ export default {
   &:focus-visible {
     outline: none;
     border-width: 3px;
-    border-color: green;
+    border-color: var(--primary-color);
   }
 
   &_size {

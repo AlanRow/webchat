@@ -8,7 +8,7 @@ export default {
   props: {
     fillColor: {
       type: String,
-      default: "green",
+      default: "var(--primary-color)",
     },
     unfillColor: {
       type: String,
@@ -16,7 +16,7 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: "white",
+      default: "var(--secondary-color)",
     },
   },
   computed: {

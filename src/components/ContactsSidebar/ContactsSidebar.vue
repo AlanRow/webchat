@@ -74,6 +74,8 @@ export default {
 
   padding: 1em;
 
+  background-color: var(--secondary-light-color);
+
   &__add-user {
     margin-bottom: 1em;
   }

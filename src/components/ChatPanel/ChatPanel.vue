@@ -2,8 +2,8 @@
   <div class="chat-wrapper">
     <div v-if="isLoading" class="chat-wrapper__loader loader-wrapper">
       <BaseLoaderSpinner
-        background-color="#dadaff"
-        fill-color="blue"
+        background-color="var(--primary-light-color)"
+        fill-color="var(--secondary-light-color)"
         unfill-color="grey"
         class="loader-wrapper__loader"
       />
@@ -51,7 +51,7 @@ export default {
   display: flex;
   justify-content: center;
   padding: 1em 2em;
-  background-color: #dadaff;
+  background-color: var(--primary-light-color);
 
   &__loader {
     justify-self: center;

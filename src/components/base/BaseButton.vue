@@ -52,11 +52,11 @@ export default {
 
   &_type {
     &_primary {
-      background-color: green;
-      color: white;
+      background-color: var(--primary-color);
+      color: var(--primary-text-color);
 
       &:hover {
-        background-color: lightgreen;
+        background-color: var(--primary-light-color);
       }
     }
   }

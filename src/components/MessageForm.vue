@@ -1,17 +1,19 @@
 <template>
-  <BaseInputSubmit
-    v-model="message"
-    class="message-input"
-    size="large"
-    btn-type="primary"
-    :input-props="{
-      type: 'text',
-      placeholder: 'Enter a message...',
-    }"
-    @submit="send"
-  >
-    Send
-  </BaseInputSubmit>
+  <div class="message-panel">
+    <BaseInputSubmit
+      v-model="message"
+      class="message-input"
+      size="large"
+      btn-type="primary"
+      :input-props="{
+        type: 'text',
+        placeholder: 'Enter a message...',
+      }"
+      @submit="send"
+    >
+      Send
+    </BaseInputSubmit>
+  </div>
 </template>
 
 <script>
@@ -33,6 +35,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.message-panel {
+  background-color: var(--secondary-light-color);
+}
+
 .message-input {
   padding: 15px 10px;
 }
