@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { BaseInput, BaseButton } from "@/components/base";
+import { BaseInput, BaseButton } from ".";
 
 export default {
   name: "BaseInputSubmit",

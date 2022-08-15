@@ -15,13 +15,8 @@
 </template>
 
 <script>
-import { BaseInputSubmit } from "@/components/base";
-
 export default {
   name: "MessageForm",
-  components: {
-    BaseInputSubmit,
-  },
   data() {
     return {
       message: "",

@@ -35,14 +35,11 @@
 </template>
 
 <script>
-import { BaseInputSubmit, BaseLoaderDotted } from "@/components/base";
 import ContactsItem from "./ContactsItem.vue";
 
 export default {
   name: "ContactsSidebar",
   components: {
-    BaseInputSubmit,
-    BaseLoaderDotted,
     ContactsItem,
   },
   props: {

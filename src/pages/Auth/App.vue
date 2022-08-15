@@ -21,11 +21,8 @@
 </template>
 
 <script>
-import { BaseInput, BaseButton } from "@/components/base";
-
 export default {
   name: "App",
-  components: { BaseInput, BaseButton },
   data() {
     return {};
   },

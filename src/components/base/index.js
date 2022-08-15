@@ -13,3 +13,17 @@ export {
   BaseLoaderDotted,
   BaseLoaderSpinner,
 };
+
+const components = [
+  BaseInput,
+  BaseButton,
+  BaseInputSubmit,
+  BaseLoaderDotted,
+  BaseLoaderSpinner,
+];
+
+export default {
+  install(Vue) {
+    components.forEach((cmp) => Vue.component(cmp.name, cmp));
+  },
+};
