@@ -21,11 +21,11 @@ module.exports = defineConfig({
     mode: "development",
   },
   /** SCSS assets **/
-  css: {
-    loaderOptions: {
-      sass: {
-        additionalData: `@import "@/assets/scss/main.scss";`,
-      },
-    },
-  },
+  // css: {
+  //   loaderOptions: {
+  //     sass: {
+  //       additionalData: `@import "@/assets/scss/main.scss";`,
+  //     },
+  //   },
+  // },
 });

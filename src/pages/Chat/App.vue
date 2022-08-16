@@ -129,6 +129,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/main.scss";
+</style>
+
+<style scoped lang="scss">
 .main-grid {
   width: 100%;
   height: 100vh;

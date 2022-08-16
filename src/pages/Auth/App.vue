@@ -1,28 +1,17 @@
 <template>
   <div id="app">
-    <form class="auth-form">
-      <div>
-        <label for="name">Name</label>
-        <base-input id="name" size="large" />
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <base-input
-          id="password"
-          size="large"
-          :input-props="{ type: 'password' }"
-        />
-      </div>
-      <div>
-        <base-button size="large">Log In</base-button>
-      </div>
-    </form>
+    <div class="page">
+      <login-form class="page__form" />
+    </div>
   </div>
 </template>
 
 <script>
+import LoginForm from "@/components/auth/LoginForm.vue";
+
 export default {
   name: "App",
+  components: { LoginForm },
   data() {
     return {};
   },
@@ -33,21 +22,36 @@ export default {
 </script>
 
 <style lang="scss">
-.app {
+@import "@/assets/scss/main.scss";
+</style>
+
+<style scoped lang="scss">
+#app {
   width: 100%;
   height: 100vh;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--primary-color);
-}
-.auth-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--primary-light-color);
 
-  border-radius: 10px;
-  background-color: var(--secondary-color);
+  &__form {
+    max-width: 400px;
+    flex-grow: 1;
+  }
 }
+// .auth-form {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   border-radius: 10px;
+//   background-color: var(--secondary-color);
+// }
 </style>
