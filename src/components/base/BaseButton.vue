@@ -37,17 +37,14 @@ export default {
 
 <style scoped lang="scss">
 .button {
-  --shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  --shadow-light: -1px -1px 1px rgba(255, 255, 255, 0.7);
-
-  font-family: Verdana, sans-serif;
+  font-family: var(--header-font);
   border: none;
 
   /** shadows **/
-  box-shadow: var(--shadow), var(--shadow-light);
+  box-shadow: var(--double-small-shadow);
 
   &:active {
-    box-shadow: inset var(--shadow), inset var(--shadow-light);
+    box-shadow: var(--double-small-shadow-active);
   }
 
   &_type {
@@ -66,14 +63,14 @@ export default {
       height: 40px;
       min-width: 60px;
       padding: 10px;
-      border-radius: 5px;
+      border-radius: var(--smooth-border-radius);
     }
     &_large {
       height: 60px;
       min-width: 100px;
       padding: 20px;
-      border-radius: 10px;
-      font-size: 1.2rem;
+      border-radius: var(--round-border-radius);
+      font-size: var(--large-font-size);
     }
   }
 }

@@ -46,12 +46,4 @@ export default {
     flex-grow: 1;
   }
 }
-// .auth-form {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   border-radius: 10px;
-//   background-color: var(--secondary-color);
-// }
 </style>

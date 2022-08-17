@@ -48,21 +48,18 @@ export default {
 
 <style scoped lang="scss">
 .input {
-  --shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  --shadow-light: -1px -1px 1px rgba(255, 255, 255, 0.7);
-
-  padding: 0 1em;
+  padding: 0 var(--margin-3);
   margin: 0;
 
-  border: 1px solid black;
+  border: var(thin-border) solid black;
   box-sizing: border-box;
 
   /** shadows **/
-  box-shadow: var(--shadow), var(--shadow-light);
+  box-shadow: var(--double-small-shadow);
 
   &:focus-visible {
     outline: none;
-    border-width: 3px;
+    border-width: var(--thick-border);
     border-color: var(--primary-color);
   }
 
@@ -70,13 +67,13 @@ export default {
     &_medium {
       height: 40px;
       min-width: 60px;
-      border-radius: 5px;
+      border-radius: var(--smooth-border-radius);
     }
     &_large {
       height: 60px;
       min-width: 100px;
-      border-radius: 10px;
-      font-size: 1.2rem;
+      border-radius: var(--round-border-radius);
+      font-size: var(--large-font-size);
     }
   }
 }

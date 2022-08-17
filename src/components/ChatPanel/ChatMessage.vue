@@ -79,10 +79,10 @@ export default {
   flex-direction: column;
 
   min-width: 60px;
-  padding: 0.5em;
-  border-radius: 0.5rem;
+  padding: var(--margin-2);
+  border-radius: var(--smooth-border-radius);
 
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--normal-shadow);
 
   color: var(--primary-text-color);
 
@@ -98,10 +98,10 @@ export default {
   }
 
   &__text {
-    font-family: Verdana, sans-serif;
-    font-size: 1.1rem;
+    font-family: var(--header-font);
+    font-size: var(--big-font-size);
     margin: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--margin-2);
   }
   &__time {
     text-align: right;

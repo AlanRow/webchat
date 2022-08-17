@@ -72,12 +72,12 @@ export default {
   display: flex;
   flex-direction: column;
 
-  padding: 1em;
+  padding: var(--margin-3);
 
   background-color: var(--secondary-light-color);
 
   &__add-user {
-    margin-bottom: 1em;
+    margin-bottom: var(--margin-3);
   }
 
   &__contacts {
@@ -116,7 +116,7 @@ export default {
     }
     &-thumb {
       background-color: #dfdfff;
-      border-radius: 5px;
+      border-radius: var(--smooth-border-radius);
 
       &:hover {
         background-color: blue;

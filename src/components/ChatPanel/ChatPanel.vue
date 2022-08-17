@@ -50,7 +50,7 @@ export default {
 .chat-wrapper {
   display: flex;
   justify-content: center;
-  padding: 1em 2em;
+  padding: var(--margin-3) var(--margin-4);
   background-color: var(--primary-light-color);
 
   &__loader {
@@ -78,7 +78,7 @@ export default {
   justify-content: flex-start;
 
   &__message {
-    margin: 0.5em 1em;
+    margin: var(--margin-2) var(--margin-3);
     align-self: flex-start;
 
     &_own {

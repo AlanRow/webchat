@@ -30,9 +30,9 @@ export default {
   justify-content: center;
   align-items: center;
 
-  font-family: Verdana, sans-serif;
+  font-family: var(--header-font);
 
-  border: 1px solid grey;
+  border: var(--thin-border) solid grey;
   border-right: none;
   border-left: none;
 
@@ -51,7 +51,7 @@ export default {
 }
 
 .name {
-  font-size: 1.1rem;
+  font-size: var(--big-font-size);
   font-weight: bold;
   user-select: none;
 }

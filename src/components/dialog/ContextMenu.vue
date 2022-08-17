@@ -93,9 +93,9 @@ export default {
 .context-options {
   background: white;
   color: black;
-  padding: 0.5em;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  padding: var(--margin-2);
+  border-radius: var(--smooth-border-radius);
+  box-shadow: var(--normal-shadow);
 }
 
 .context-options-list {
@@ -106,13 +106,13 @@ export default {
 
   &__item {
     &:not(:first-child) {
-      margin-top: 0.5em;
+      margin-top: var(--margin-2);
     }
   }
 }
 
 .context-options-item {
-  padding: 0 0.5em;
+  padding: 0 var(--margin-2);
   user-select: none;
   &:hover {
     background: rgba(0, 0, 128, 0.3);

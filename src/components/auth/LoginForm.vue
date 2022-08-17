@@ -37,10 +37,10 @@ export default {
   display: flex;
   flex-direction: column;
 
-  padding: 1em 2em;
+  padding: var(--margin-3) var(--margin-4);
   background-color: var(--secondary-color);
 
-  border-radius: 12px;
+  border-radius: var(--round-border-radius);
 
   &__title {
     width: 100%;
@@ -53,7 +53,7 @@ export default {
   flex-direction: column;
 
   &__label {
-    margin-bottom: 0.25em;
+    margin-bottom: var(--margin-1);
   }
 
   &__input {
@@ -62,13 +62,13 @@ export default {
 }
 
 .form-title {
-  font-family: Verdana, sans-serif;
-  font-size: 1.25rem;
+  font-family: var(--header-font);
+  font-size: var(--large-font-size);
   font-weight: bold;
 }
 
 .field-label {
-  font-size: 1.1rem;
+  font-size: var(--big-font-size);
 }
 
 .field-input {
