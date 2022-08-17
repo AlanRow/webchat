@@ -4,15 +4,35 @@
       <h2 class="form-title">Login</h2>
     </div>
 
-    <div class="login-form__field field">
-      <label for="auth_email" class="field__label field-label">E-mail</label>
-      <base-input
-        id="auth_email"
-        v-model="email"
-        size="medium"
-        class="field__input field-input"
-        :input-props="emailProps"
-      />
+    <div class="login-form__body">
+      <div class="login-form__field field">
+        <label for="auth_email" class="field__label field-label">E-mail</label>
+        <base-input
+          id="auth_email"
+          v-model="email"
+          size="medium"
+          class="field__input field-input"
+          :input-props="$options.emailProps"
+        />
+      </div>
+
+      <div class="login-form__field field">
+        <label for="auth_password" class="field__label field-label">
+          Password
+        </label>
+        <base-input
+          id="auth_password"
+          v-model="password"
+          size="medium"
+          class="field__input field-input"
+          :input-props="$options.passwordProps"
+        />
+      </div>
+    </div>
+
+    <div class="login-form__footer form-footer">
+      <base-button type="secondary">Sign Up</base-button>
+      <base-button>Login</base-button>
     </div>
   </form>
 </template>
@@ -28,6 +48,13 @@ export default {
   },
   emailProps: {
     type: "email",
+    placeholder: "your_email@gmail.com",
+    required: true,
+  },
+  passwordProps: {
+    type: "password",
+    minlength: 4,
+    required: true,
   },
 };
 </script>
@@ -38,13 +65,26 @@ export default {
   flex-direction: column;
 
   padding: var(--margin-3) var(--margin-4);
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-light-color);
 
   border-radius: var(--round-border-radius);
 
   &__title {
     width: 100%;
     text-align: center;
+  }
+
+  &__body {
+    margin-bottom: var(--margin-3);
+  }
+
+  &__field {
+    &:not(:last-child) {
+      margin-bottom: var(--margin-2);
+    }
+  }
+
+  &__footer {
   }
 }
 
@@ -73,7 +113,13 @@ export default {
 
 .field-input {
   &:invalid {
-    background-color: rgba(255, 0, 0, 0.3);
+    border-color: red;
   }
+}
+
+.form-footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--margin-3);
 }
 </style>
