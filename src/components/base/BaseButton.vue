@@ -56,6 +56,14 @@ export default {
         background-color: var(--primary-light-color);
       }
     }
+    &_secondary {
+      background-color: var(--secondary-color);
+      color: var(--secondary-text-color);
+
+      &:hover {
+        background-color: var(--secondary-light-color);
+      }
+    }
   }
 
   &_size {
