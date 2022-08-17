@@ -1,9 +1,9 @@
 :root {
   /** colors */
-  --primary-color: blue;
+  --primary-color: #33a;
   --primary-light-color: lightblue;
   --primary-text-color: white;
-  --secondary-color: yellow;
+  --secondary-color: #fe3;
   --secondary-light-color: lightyellow;
   --secondary-text-color: black;
   /** fonts **/
@@ -19,8 +19,8 @@
   --double-small-shadow-active: inset 1px 1px 1px rgba(0, 0, 0, 0.3), inset -1px -1px 1px rgba(255, 255, 255, 0.7);
   /** borders **/
   --square-border-radius: 0px;
-  --smooth-border-radius: 5px;
-  --round-border-radius: 10px;
+  --smooth-border-radius: 6px;
+  --round-border-radius: 12px;
   --highly-round-border-radius: 15px;
   
   --thin-border: 1px;
